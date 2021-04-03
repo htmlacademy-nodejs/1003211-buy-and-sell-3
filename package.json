@@ -1,0 +1,27 @@
+{
+  "name": "1003211-buy-and-sell-3",
+  "version": "1.0.0",
+  "description": "Куплю, Продам",
+  "main": "./src/service/service.js",
+  "scripts": {
+    "test": "npm run eslint",
+    "eslint": "eslint --ext .js src/",
+    "start": "node ./src/service/service.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/san4ezz87/1003211-buy-and-sell-3.git"
+  },
+  "author": "Смирнов Александр",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/san4ezz87/1003211-buy-and-sell-3/issues"
+  },
+  "homepage": "https://github.com/san4ezz87/1003211-buy-and-sell-3#readme",
+  "devDependencies": {
+    "eslint": "7.23.0"
+  },
+  "dependencies": {
+    "eslint-config-htmlacademy": "^0.6.0"
+  }
+}
