@@ -5,7 +5,6 @@ const USER_ARGV_INDEX = 2;
 
 const ExitCode = {
   success: 0,
-
 };
 
 const {Cli} = require(`./cli`);

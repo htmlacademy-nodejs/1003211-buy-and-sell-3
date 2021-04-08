@@ -66,7 +66,6 @@ const generateOffers = (count) => {
       type: types[getRandomNumber(0, types.length - 1)],
       sum: getRandomNumber(sumRange.MIN_SUM, sumRange.MAX_SUM),
       catefory: shuffle(CATEGORY).slice(0, getRandomNumber(0, CATEGORY.length - 1))
-
     };
   });
 };
