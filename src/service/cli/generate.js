@@ -1,6 +1,7 @@
 'use strict';
 
-const fs = require(`fs`);
+const fs = require(`fs`).promises;
+const chalk = require(`chalk`);
 const {getRandomNumber, shuffle} = require(`../../utils`);
 
 const TITLLES = [
@@ -70,6 +71,17 @@ const generateOffers = (count) => {
   });
 };
 
+const writeFile = async (content) => {
+  try {
+    await fs.writeFile(`mocks.json`, content);
+  } catch (e) {
+    console.log(chalk.red(`Не удалось записать файл!`));
+    return process.exit(1);
+  }
+  console.log(chalk.green(`Файл успешно записан!`));
+  return process.exit(0);
+};
+
 module.exports = {
   name: `--generate`,
   run([count]) {
@@ -81,13 +93,7 @@ module.exports = {
     }
 
     const content = JSON.stringify(generateOffers(countChecked), null, 2);
+    writeFile(content);
 
-    fs.writeFile(`mocks.json`, content, (err) => {
-      if (err) {
-        return process.exit(1);
-      }
-
-      return process.exit(0);
-    });
   }
 };
